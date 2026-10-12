@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f6f9fe;
+  --foreground: #0f172a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  min-height: 100vh;
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+
+  .heading-hero {
+    @apply text-[2rem] font-semibold tracking-tight text-ink sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4rem] xl:leading-[1.05];
+  }
+
+  .heading-section {
+    @apply text-3xl font-semibold tracking-tight text-ink sm:text-4xl lg:text-[2.75rem] lg:leading-tight;
+  }
+
+  .text-body {
+    @apply text-base leading-relaxed text-ink-muted sm:text-lg;
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(23, 105, 224, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(23, 105, 224, 0.05) 1px, transparent 1px);
+    background-size: 42px 42px;
+  }
+}
